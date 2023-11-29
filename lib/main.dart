@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:navion/calcul.dart';
+import 'package:navion/page/calcul.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,16 +22,29 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Accueil'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => calcul()),
-            );
-          },
-          child: Text('Aller à la Nouvelle Page'),
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => calcul()),
+              );
+            },
+            child: Text('Calcul 1'),
+          ),
+          SizedBox(height: 20), // Ajoutez un espace vertical entre les boutons
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => calcul()),
+              );
+            },
+            child: Text('Calcul 2'),
+          ),
+        ],
       ),
     );
   }
